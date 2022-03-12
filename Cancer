@@ -5,3 +5,33 @@ def close_window():
 button = Button(master, text = 'Click me', command = close_window)
 button.pack()
 mainloop()
+import cv2
+
+cap = cv2.VideoCaptur(0)
+#Check if the webcam is opened correctly
+if not cap.isOpened():
+  raise IOError("Cannot open webcam")
+  
+go=True
+while go=True:
+  ret, frame = cap.read()
+  frame = cv2.resize(frame, None, fx=0.5, interpolation=cv2.INTER_AREA)
+  cv2.imshow('Input', frame)
+  
+c = cv2.waitKey(1)
+if c==27:
+  break
+
+cap.release()
+cv2.destroyAllWindows()
+
+from cv2 import*
+#initialize the camera
+cam = VideoCapture(0)
+s, img = cam.read()
+if s:
+  namedwindow("cam-test",CV_WINDOW_AUTOSIZE)
+  imshow("cam-test",img)
+  waitKey(0)
+  destroyWindow("cam-test")
+  imwrite("filename.jpg",img) #save photo
