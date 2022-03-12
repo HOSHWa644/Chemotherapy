@@ -35,3 +35,14 @@ if s:
   waitKey(0)
   destroyWindow("cam-test")
   imwrite("filename.jpg",img) #save photo
+
+ncell=input()
+if ncell>5*μm and ncell<100*µm:
+  print (f"No cancer cell detected")
+else:
+  print (f"Cancer cell detected: DANGER!")
+  
+  
+  
+  
+  
